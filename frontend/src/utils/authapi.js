@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const VITE_API_URL = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+const VITE_API_URL = import.meta.env.VITE_API_URL;
 
 async function handleResponse(promise) {
   try {

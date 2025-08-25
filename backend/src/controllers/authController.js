@@ -10,7 +10,6 @@ function createToken(payload) {
 
 // helper: cookie options to use when setting and clearing cookie
 function cookieOptions() {
-  const isProd = process.env.NODE_ENV === 'production';
   const raw = process.env.JWT_EXPIRES_IN;
   let maxAgeMs = 60 * 60 * 1000;
   if (raw.endsWith('h')) {
@@ -22,8 +21,8 @@ function cookieOptions() {
   }
   return {
     httpOnly: true,
-    secure: isProd,
-    sameSite: 'lax',
+    secure: true,
+    sameSite: "none",
     maxAge: maxAgeMs,
   };
 }

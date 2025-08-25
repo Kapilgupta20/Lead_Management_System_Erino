@@ -8,7 +8,7 @@ const { protect } = require('../middleware/authMiddleware');
 router.use(protect);
 
 // POST /leads
-router.post('/', validateCreateLead, controller.createLead);
+router.post('/', controller.createLead);
 
 // GET /leads (list)
 router.get('/', controller.listLeads);
@@ -17,7 +17,7 @@ router.get('/', controller.listLeads);
 router.get('/:id', controller.getLead);
 
 // PUT /leads/:id
-router.put('/:id', validateUpdateLead, controller.updateLead);
+router.put('/:id', controller.updateLead);
 
 // DELETE /leads/:id
 router.delete('/:id', controller.deleteLead);

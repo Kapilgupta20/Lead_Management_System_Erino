@@ -65,26 +65,26 @@ export const getLeads = async (params = {}) => {
     ...(sort && { sort }),
     ...serializeFilters(filters)
   };
-  const response = await api.get('/leads', { params: query });
+  const response = await api.get('/leads', { withCredentials: true }, { params: query });
   return response.data;
 };
 
 export const getLead = async (id) => {
-  const response = await api.get(`/leads/${id}`);
+  const response = await api.get(`/leads/${id}`, { withCredentials: true });
   return response.data;
 };
 
 export const createLead = async (leadData) => {
-  const response = await api.post('/leads', leadData);
+  const response = await api.post('/leads', { withCredentials: true }, leadData);
   return response.data;
 };
 
 export const updateLead = async (id, updates) => {
-  const response = await api.put(`/leads/${id}`, updates);
+  const response = await api.put(`/leads/${id}`, { withCredentials: true }, updates);
   return response.data;
 };
 
 export const deleteLead = async (id) => {
-  const response = await api.delete(`/leads/${id}`);
+  const response = await api.delete(`/leads/${id}`, { withCredentials: true });
   return response.data;
 };

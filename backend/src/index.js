@@ -20,6 +20,7 @@ app.use(cookieParser());
 app.use(cors({
   origin: [
     "https://lead-management-system-erino-abyho9ulq.vercel.app",
+    "https://lead-management-system-erino-ruby.vercel.app/",
     "http://localhost:5173"
   ],
   methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],

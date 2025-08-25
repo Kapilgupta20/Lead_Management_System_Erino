@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 const Lead = require('../models/Lead');
-const { parseFilters } = require('../utils/parsefilters');
+const { parseFilters } = require('../utils/parseFilters');
 
 const createLead = async (req, res, next) => {
   try {

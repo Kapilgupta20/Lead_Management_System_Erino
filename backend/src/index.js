@@ -18,9 +18,11 @@ app.use(cookieParser());
 
 
 app.use(cors({
-  origin: '*',
+  origin: "https://lead-management-system-erino-ruby.vercel.app/",
+  methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
   credentials: true,
 }));
+app.options("*", cors());
 
 app.use('/auth', authRoutes);
 app.use('/leads', leadRoutes)
